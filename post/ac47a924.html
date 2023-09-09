@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Java基础（一） | Daniel Wu</title><meta name="author" content="Daniel Wu"><meta name="copyright" content="Daniel Wu"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1. 变量、运算符、表达式、输入与输出编程是一种控制计算机的方式，和我们平时双击打开文件、关机、重启没有任何区别——闫学灿 1. 变量变量必须先定义，才可以使用。不能重名。变量定义的方式： 123456public class Main &amp;#123;    public static void main(String[] args) &amp;#123;        int a &#x3D; 5;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础（一）">
+<meta property="og:url" content="http://example.com/post/ac47a924.html">
+<meta property="og:site_name" content="Daniel Wu">
+<meta property="og:description" content="1. 变量、运算符、表达式、输入与输出编程是一种控制计算机的方式，和我们平时双击打开文件、关机、重启没有任何区别——闫学灿 1. 变量变量必须先定义，才可以使用。不能重名。变量定义的方式： 123456public class Main &amp;#123;    public static void main(String[] args) &amp;#123;        int a &#x3D; 5;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg">
+<meta property="article:published_time" content="2023-09-09T15:14:04.000Z">
+<meta property="article:modified_time" content="2023-09-09T15:20:30.467Z">
+<meta property="article:author" content="Daniel Wu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><link rel="shortcut icon" href="/./img/avatar.jpg"><link rel="canonical" href="http://example.com/post/ac47a924.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java基础（一）',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-09 23:20:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/./img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://konachan.net/data/preview/d7/fc/d7fcf2c438e1b3ea5bf8d1c6907c445f.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Daniel Wu"><img class="site-icon" src="/./img/avatar.jpg"/><span class="site-name">Daniel Wu</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 链接</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java基础（一）</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-09T15:14:04.000Z" title="发表于 2023-09-09 23:14:04">2023-09-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-09T15:20:30.467Z" title="更新于 2023-09-09 23:20:30">2023-09-09</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java基础（一）"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="1-变量、运算符、表达式、输入与输出"><a href="#1-变量、运算符、表达式、输入与输出" class="headerlink" title="1. 变量、运算符、表达式、输入与输出"></a>1. 变量、运算符、表达式、输入与输出</h2><p><strong>编程是一种控制计算机的方式，和我们平时双击打开文件、关机、重启没有任何区别——闫学灿</strong></p>
+<h5 id="1-变量"><a href="#1-变量" class="headerlink" title="1. 变量"></a>1. 变量</h5><h5 id="变量必须先定义，才可以使用。不能重名。"><a href="#变量必须先定义，才可以使用。不能重名。" class="headerlink" title="变量必须先定义，才可以使用。不能重名。"></a>变量必须先定义，才可以使用。不能重名。</h5><p>变量定义的方式：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">5</span>;</span><br><span class="line">        <span class="type">int</span> b, c = a, d = <span class="number">10</span> / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>内置数据类型：</p>
+<table>
+<thead>
+<tr>
+<th align="left">类型</th>
+<th align="left">字节数</th>
+<th align="left">举例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">byte</td>
+<td align="left">1</td>
+<td align="left">123</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">2</td>
+<td align="left">12345</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">4</td>
+<td align="left">123456789</td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">8</td>
+<td align="left">1234567891011L</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">4</td>
+<td align="left">1.2F</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">8</td>
+<td align="left">1.2, 1.2D</td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">1</td>
+<td align="left">true, false</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">2</td>
+<td align="left">‘A’</td>
+</tr>
+</tbody></table>
+<hr>
+<p>常量：</p>
+<p>使用<code>final</code>修饰：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">final int N = 110;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>类型转化：</p>
+<ul>
+<li>显示转化：<code>int x = (int)&#39;A&#39;;</code></li>
+<li>隐式转化：<code>double x = 12, y = 4 * 3.3;</code></li>
+</ul>
+<hr>
+<h5 id="2-运算符"><a href="#2-运算符" class="headerlink" title="2. 运算符"></a>2. 运算符</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = 10, B = 20</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">运算符</th>
+<th align="left">描述</th>
+<th align="left">实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>+</code></td>
+<td align="left">把两个数相加</td>
+<td align="left"><code>A + B</code> 将得到 30</td>
+</tr>
+<tr>
+<td align="left"><code>-</code></td>
+<td align="left">从第一个数中减去第二个数</td>
+<td align="left"><code>A - B</code> 将得到 -10</td>
+</tr>
+<tr>
+<td align="left"><code>*</code></td>
+<td align="left">把两个数相乘</td>
+<td align="left"><code>A * B</code> 将得到 200</td>
+</tr>
+<tr>
+<td align="left"><code>/</code></td>
+<td align="left">分子除以分母</td>
+<td align="left"><code>B / A</code> 将得到 2</td>
+</tr>
+<tr>
+<td align="left"><code>%</code></td>
+<td align="left">取模运算符，向零整除后的余数，注意余数可能为负数</td>
+<td align="left"><code>B % A</code> 将得到 0</td>
+</tr>
+<tr>
+<td align="left"><code>++</code></td>
+<td align="left">自增运算符</td>
+<td align="left"><code>A++</code>：先取值后加1；<code>++A</code>：先加1后取值</td>
+</tr>
+<tr>
+<td align="left"><code>--</code></td>
+<td align="left">自减运算符</td>
+<td align="left"><code>A--</code>：先取值后减1；<code>--A</code>：先减1后取值</td>
+</tr>
+<tr>
+<td align="left"><code>+=</code></td>
+<td align="left">第一个数加上第二个数</td>
+<td align="left"><code>A = A + B</code> 可以简写为 <code>A += B</code></td>
+</tr>
+<tr>
+<td align="left"><code>-=</code></td>
+<td align="left">第一个数减去第二个数</td>
+<td align="left"><code>A = A - B</code> 可以简写为 <code>A -= B</code></td>
+</tr>
+<tr>
+<td align="left"><code>*=</code></td>
+<td align="left">第一个数乘以第二个数</td>
+<td align="left"><code>A = A * B</code> 可以简写为 <code>A *= B</code></td>
+</tr>
+<tr>
+<td align="left"><code>/=</code></td>
+<td align="left">第一个数除以第二个数</td>
+<td align="left"><code>A = A / B</code> 可以简写为 <code>A /= B</code></td>
+</tr>
+<tr>
+<td align="left"><code>%=</code></td>
+<td align="left">第一个对第二个数取余数</td>
+<td align="left"><code>A = A % B</code> 可以简写为 <code>A %= B</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h5 id="3-表达式"><a href="#3-表达式" class="headerlink" title="3. 表达式"></a>3. 表达式</h5><p>整数的加减乘除四则运算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">6</span> + <span class="number">3</span> * <span class="number">4</span> / <span class="number">2</span> - <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(a);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> a * <span class="number">10</span> + <span class="number">5</span> / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(b);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="number">23</span> * <span class="number">56</span> - <span class="number">78</span> / <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>浮点数（小数）的运算：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">double</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">1.5</span>, y = <span class="number">3.2</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(x * y);</span><br><span class="line">        System.out.println(x + y);</span><br><span class="line">        System.out.println(x - y);</span><br><span class="line">        System.out.println(x / y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>整型变量的自增、自减：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">a</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">b</span> <span class="operator">=</span> a ++ ;</span><br><span class="line">        System.out.println(a + <span class="string">&quot; &quot;</span> + b);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> ++ a;</span><br><span class="line">        System.out.println(a + <span class="string">&quot; &quot;</span> + c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="4-输入"><a href="#4-输入" class="headerlink" title="4. 输入"></a>4. 输入</h5><p>方式1，效率较低，输入规模较小时使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> sc.next();  <span class="comment">// 读入下一个字符串</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> sc.nextInt();  <span class="comment">// 读入下一个整数</span></span><br><span class="line">        <span class="type">float</span> <span class="variable">y</span> <span class="operator">=</span> sc.nextFloat();  <span class="comment">// 读入下一个单精度浮点数</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">z</span> <span class="operator">=</span> sc.nextDouble();  <span class="comment">// 读入下一个双精度浮点数</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">line</span> <span class="operator">=</span> sc.nextLine();  <span class="comment">// 读入下一行</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方式2，效率较高，输入规模较大时使用。注意需要抛异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedReader;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStreamReader;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">br</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> br.readLine();</span><br><span class="line">        System.out.println(str);</span><br><span class="line">    &#125;java</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="5-输出"><a href="#5-输出" class="headerlink" title="5. 输出"></a>5. 输出</h5><p>方式1，效率较低，输出规模较小时使用。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        System.out.println(<span class="number">123</span>);  <span class="comment">// 输出整数 + 换行</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Hello World&quot;</span>);  <span class="comment">// 输出字符串 + 换行</span></span><br><span class="line">        System.out.print(<span class="number">123</span>);  <span class="comment">// 输出整数</span></span><br><span class="line">        System.out.print(<span class="string">&quot;yxc\n&quot;</span>);  <span class="comment">// 输出字符串</span></span><br><span class="line">        System.out.printf(<span class="string">&quot;%04d %.2f\n&quot;</span>, <span class="number">4</span>, <span class="number">123.456D</span>);  <span class="comment">// 格式化输出，float与double都用%f输出</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>System.out.printf()</code>中不同类型变量的输出格式：</p>
+<p>(1) <code>int：%d</code><br>   (2) <code>float: %f</code>, 默认保留6位小数<br>   (3) <code>double: %f</code>， 默认保留6位小数<br>   (4) <code>char: %c</code>, 回车也是一个字符，用<code>&#39;\n&#39;</code>表示<br>   (5) <code>String: %s</code></p>
+<p>方式2，效率较高，输出规模较大时使用。注意需要抛异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStreamWriter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">BufferedWriter</span> <span class="variable">bw</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedWriter</span>(<span class="keyword">new</span> <span class="title class_">OutputStreamWriter</span>(System.out));</span><br><span class="line">        bw.write(<span class="string">&quot;Hello World\n&quot;</span>);</span><br><span class="line">        bw.flush();  <span class="comment">// 需要手动刷新缓冲区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="笔记补充："><a href="#笔记补充：" class="headerlink" title="笔记补充："></a>笔记补充：</h2><h3 id="1-变量-1"><a href="#1-变量-1" class="headerlink" title="1.变量"></a>1.变量</h3><p>（1）java中变量没有赋值直接输出会报错<br>   （2）内置数据类型<br>    byte整数，只不过占一个字节 1byte(字节)&#x3D;8bit(比特)<br>    short整数，占两个字节<br>    int整数，占四个字节<br>    long整数，占八个字节，大概在10的八次方左右<br>    float浮点数，四个字节，有效数字大概为6到7位<br>    double浮点数，八个字节，有效数字大概为15到16位</p>
+<h3 id="2-常量"><a href="#2-常量" class="headerlink" title="2.常量"></a>2.常量</h3><p>变量可以修改，常量赋值之后不能再修改<br>   常量是为了自己写代码，以及代码间的协作<br>    java中的final相当于c中的const</p>
+<h3 id="3-类型转化"><a href="#3-类型转化" class="headerlink" title="3.类型转化"></a>3.类型转化</h3><p>显示转化：你可以明显的看到变量类型是怎么转换的过程<br>   隐式转化：<br>   double x&#x3D;12，会先隐形的把12转化为double类型，然后再赋值给x<br>   double y&#x3D;43.3 ，会先把int型的4转化为double类型，然后3.3，然后再赋值给y<br>  （为什么会先将int型转化为double类型？原则：优先将表示范围小的变量类型转化位表示范围大的变量类型）<br>   int t&#x3D;‘A’+2，会先把char型的字符A转化为对应int型的ACSII码，然后+2，然后赋值给t<br>   （显示转化(强制转换)可以大转小，隐式转化只能小转大）</p>
+<h3 id="4-运算符"><a href="#4-运算符" class="headerlink" title="4.运算符"></a>4.运算符</h3><p>&#x2F;：java和c中的&#x2F;是向0取整，python中的&#x2F;是向下取整<br>   %：数学中的取模的结果只能是正数，但java和c中可以为负数</p>
+<h3 id="5-表达式"><a href="#5-表达式" class="headerlink" title="5.表达式"></a>5.表达式</h3><p>()括号可以改变运算的优先级<br>    浮点数的比较：<br>   直接判断可能会有误差 if(x&#x3D;&#x3D;y)<br>   一般通过计算两个数的差的绝对值和一个很小的数进行判断来比较 if(Math.abs(x-y)&lt;1e-8)</p>
+<h3 id="6-输入输出："><a href="#6-输入输出：" class="headerlink" title="6.输入输出："></a>6.输入输出：</h3><p>java中的单词命名都是驼峰命名法，两个单词的话第二个单词要大些<br>   java的优势：生态好，便于多人协作，工具多包多，运行效率比python快</p>
+<h4 id="（1）输入1："><a href="#（1）输入1：" class="headerlink" title="（1）输入1："></a>（1）输入1：</h4><p>输入要利用工具Scanner，先要引入包 import java.util.Scanner;<br>   next遇到空白字符就会输入结束(空格、回车、制表符等等)<br>   nextLine可以读入一行字符串<br>   比较慢的数据输入方式，如果输入的数在10的5次方以内可以用</p>
+<h4 id="（2）输入方式2："><a href="#（2）输入方式2：" class="headerlink" title="（2）输入方式2："></a>（2）输入方式2：</h4><p>输入数据量超过10的五次方，一般用BufferedReader<br>    前面要加：<br>    import java.io.BufferedReader;<br>    import java.io.InputStreamReader;<br>    注意抛出异常<br>    BufferedWriter输入整数要手动输入<br>注意最后要需要手动刷新缓冲区，如果不刷新有些时候会获取不到输出<br>bw.flush(); </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Daniel Wu</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/post/ac47a924.html">http://example.com/post/ac47a924.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Daniel Wu</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/4717b9a2.html" title="Git Svn Maven"><img class="cover" src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Git Svn Maven</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/./img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Daniel Wu</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wudianzong.github.io" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:xxxxxx@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E3%80%81%E8%BE%93%E5%85%A5%E4%B8%8E%E8%BE%93%E5%87%BA"><span class="toc-number">1.</span> <span class="toc-text">1. 变量、运算符、表达式、输入与输出</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">1. 变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%BF%85%E9%A1%BB%E5%85%88%E5%AE%9A%E4%B9%89%EF%BC%8C%E6%89%8D%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E3%80%82%E4%B8%8D%E8%83%BD%E9%87%8D%E5%90%8D%E3%80%82"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">变量必须先定义，才可以使用。不能重名。</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.0.0.3.</span> <span class="toc-text">2. 运算符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.0.4.</span> <span class="toc-text">3. 表达式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E8%BE%93%E5%85%A5"><span class="toc-number">1.0.0.5.</span> <span class="toc-text">4. 输入</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E8%BE%93%E5%87%BA"><span class="toc-number">1.0.0.6.</span> <span class="toc-text">5. 输出</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%94%E8%AE%B0%E8%A1%A5%E5%85%85%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">笔记补充：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%8F%98%E9%87%8F-1"><span class="toc-number">2.1.</span> <span class="toc-text">1.变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E9%87%8F"><span class="toc-number">2.2.</span> <span class="toc-text">2.常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%B1%BB%E5%9E%8B%E8%BD%AC%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">3.类型转化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.4.</span> <span class="toc-text">4.运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">2.5.</span> <span class="toc-text">5.表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">6.输入输出：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E8%BE%93%E5%85%A51%EF%BC%9A"><span class="toc-number">2.6.1.</span> <span class="toc-text">（1）输入1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E8%BE%93%E5%85%A5%E6%96%B9%E5%BC%8F2%EF%BC%9A"><span class="toc-number">2.6.2.</span> <span class="toc-text">（2）输入方式2：</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/ac47a924.html" title="Java基础（一）"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Java基础（一）"/></a><div class="content"><a class="title" href="/post/ac47a924.html" title="Java基础（一）">Java基础（一）</a><time datetime="2023-09-09T15:14:04.000Z" title="发表于 2023-09-09 23:14:04">2023-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4717b9a2.html" title="Git Svn Maven"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git Svn Maven"/></a><div class="content"><a class="title" href="/post/4717b9a2.html" title="Git Svn Maven">Git Svn Maven</a><time datetime="2023-09-08T05:51:04.000Z" title="发表于 2023-09-08 13:51:04">2023-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4717b9a2.html" title="Git Svn Maven"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git Svn Maven"/></a><div class="content"><a class="title" href="/post/4717b9a2.html" title="Git Svn Maven">Git Svn Maven</a><time datetime="2023-09-08T05:51:04.000Z" title="发表于 2023-09-08 13:51:04">2023-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4717b9a2.html" title="Git Svn Maven"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git Svn Maven"/></a><div class="content"><a class="title" href="/post/4717b9a2.html" title="Git Svn Maven">Git Svn Maven</a><time datetime="2023-09-08T05:51:04.000Z" title="发表于 2023-09-08 13:51:04">2023-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/4717b9a2.html" title="Git Svn Maven"><img src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Git Svn Maven"/></a><div class="content"><a class="title" href="/post/4717b9a2.html" title="Git Svn Maven">Git Svn Maven</a><time datetime="2023-09-08T05:51:04.000Z" title="发表于 2023-09-08 13:51:04">2023-09-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Daniel Wu</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
